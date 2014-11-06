@@ -16,7 +16,11 @@ namespace Kickstarter.Api
         {
             var session = new KickStarterSession();
 
-            var loggedOn = await session.Logon(email, password, _clientId);
+            bool loggedOn;
+
+            if (email != null)
+                loggedOn = await session.Logon(email, password, _clientId);
+            else loggedOn = false;
 
             // TODO: Report successful logon
 
