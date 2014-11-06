@@ -14,6 +14,12 @@ namespace Kickstarter.Api
 
             KickstarterClient client = new KickstarterClient();
 
+            Task<IKickstarterSession> sessionTask = client.StartSession(null, null);
+            sessionTask.Start();
+            sessionTask.Wait();
+            var result = sessionTask.Result;
+
+
 
         }
 
