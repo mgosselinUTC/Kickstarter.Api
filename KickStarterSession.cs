@@ -7,7 +7,7 @@ using Kickstarter.Api.Model;
 namespace Kickstarter.Api
 {
     internal class KickStarterSession : IKickstarterSession
-    {
+    { 
         private const string Root = "https://api.kickstarter.com/";
         private string _accessToken;
 
