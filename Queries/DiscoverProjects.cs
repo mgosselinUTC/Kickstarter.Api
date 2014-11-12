@@ -38,7 +38,7 @@ namespace Kickstarter.Api.Queries
 
         public DiscoverProjects Woe(string p)
         {
-            _parameters["woe"] = p;
+            _parameters["woe_id"] = p;
             return this;
         }
 

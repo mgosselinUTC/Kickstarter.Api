@@ -54,6 +54,7 @@ namespace Kickstarter.Api
                 new {email, password});
 
             _accessToken = logonResult.AccessToken;
+            Console.WriteLine(_accessToken);
             User = logonResult.User;
 
             return true;
