@@ -36,6 +36,12 @@ namespace Kickstarter.Api.Queries
             return this;
         }
 
+        public DiscoverProjects Woe(string p)
+        {
+            _parameters["woe"] = p;
+            return this;
+        }
+
         public async Task<IEnumerable<Project>> ApplyTo(IKickstarterSession session)
         {
             var results = new List<Project>();
@@ -62,7 +68,11 @@ namespace Kickstarter.Api.Queries
             if (_parameters.Any())
                 builder.Append("?");
             builder.Append(String.Join("&", from p in _parameters select String.Format("{0}={1}", p.Key, p.Value)));
+#if DEBUG
+            Console.WriteLine("Created URL: " + builder.ToString());
+#endif
             return builder.ToString();
         }
+
     }
 }
