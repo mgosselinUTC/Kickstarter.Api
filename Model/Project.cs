@@ -75,5 +75,8 @@ namespace Kickstarter.Api.Model
 
         [DataMember(Name = "video")]
         public Video Video { get; set; }
+
+        [DataMember(Name = "url")]
+        public string url { get; set; }
     }
 }
